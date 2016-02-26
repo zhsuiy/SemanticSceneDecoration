@@ -4,6 +4,8 @@
 #include <QtCore/qvector.h>
 #include <QtWidgets/QAction>
 #include "Vertex.h"
+#include <QtGui/QOpenGLBuffer>
+#include <QtGui/QOpenGLVertexArrayObject>
 
 class Mesh
 {
@@ -18,8 +20,9 @@ public:
 	//void Draw(Shader shader);
 private:
 	/* Render data */
-
-	GLuint VAO, VBO, EBO;
+	QOpenGLBuffer VBO;
+	QOpenGLVertexArrayObject VAO;
+	
 	void setupMesh();
 };
 
